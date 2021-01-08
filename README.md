@@ -21,15 +21,14 @@ Requirements:
 
 * On ARCH based distributions use `sudo pacman -S chromium`  
 * On Ubuntu based distrubutions use `sudo apt-get install chromium-browser`  
-* Other OS go to https://www.chromium.org/getting-involved/download-chromium
+* On other operating systems, go to https://www.chromium.org/getting-involved/download-chromium
 
 # How to use  
 Right now only a few typing modes on MonkeyType are supported:
 
-*Custom text* - To let the script type a custom text, enter the text you want to type into the MonkeyType interface. Then also enter it into the `text` variable in the script.  
-Finally call the `type_given_text()` method with the `text` variable inside the parentheses. After starting the script, switch to the browser in which the typing test is opened.  
-*Words* - To let the script perform a typing test in the _words_ mode, simply call the `type_random_text()` and start the script.  
-A new Chrome/Chromium window will now open. In the window you can start a typing test with either 10, 25, 50 or 100 words.
+*Custom text* - To let the script type a custom text, enter the text you want to type into the MonkeyType interface. Then also enter it into the `text` variable in the script. Finally call the `type_given_text()` method with the `text` variable inside the parentheses. After starting the script, switch to the browser in which the typing test is opened. 
+  
+*Words* - To let the script perform a typing test in the _words_ mode, simply call the `type_random_text()` and start the script. A new Chrome/Chromium window will now open. In the window you can start a typing test with either 10, 25, 50 or 100 words.
 
 There are a few options the user can use to modify the execution of the script:  
 
