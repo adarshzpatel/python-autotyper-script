@@ -24,7 +24,7 @@ Requirements:
 * On other operating systems, go to https://www.chromium.org/getting-involved/download-chromium
 
 # How to use  
-Right now only a few typing modes on MonkeyType are supported:
+Right now this script only supports the following typing modes on MonkeyType:
 
 *Custom text* - To let the script type a custom text, enter the text you want to type into the MonkeyType interface. Then also enter it into the `text` variable in the script. Finally call the `type_given_text()` method with the `text` variable inside the parentheses. After starting the script, switch to the browser in which the typing test is opened. 
   
