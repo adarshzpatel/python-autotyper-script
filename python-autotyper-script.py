@@ -3,11 +3,13 @@ import time
 import random
 from datetime import datetime
 from selenium import webdriver
+import sys
 
+seedValue = random.randrange(sys.maxsize)
 
 # Uses the current time as a seed for randomised typing speed
 # This method is outdated as of Python 3.9, so I have to find a different solution for seeding.
-random.seed(datetime.now())
+random.seed(seedValue)
 
 # Opens MonkeyType in a Chromemium/Chrome window
 browser = webdriver.Chrome(executable_path='chromedriver')
