@@ -1,9 +1,7 @@
-# Install pyautogui by typing " pip install pyautogui " in the command line.
 import pyautogui
 import time
 import random
 from datetime import datetime
-import requests
 from selenium import webdriver
 
 
@@ -11,11 +9,12 @@ from selenium import webdriver
 # This method is outdated as of Python 3.9, so I have to find a different solution for seeding.
 random.seed(datetime.now())
 
-browser = webdriver.Chrome(executable_path='chromedriver')
 # Opens MonkeyType in a Chromemium/Chrome window
+browser = webdriver.Chrome(executable_path='chromedriver')
 browser.get('https://monkeytype.com/')
 
-text = ""  # Enter the text to type inside the double quotes, this is used in the custom text mode on MonkeyType
+# Enter the text to type inside the double quotes, this is used in the custom text mode on MonkeyType
+text = ""
 
 
 def type_given_text(text_to_type):
@@ -25,13 +24,14 @@ def type_given_text(text_to_type):
     char_list = [i for i in text_to_type]
 
     for char in char_list:
-        # Uncomment line below for randomised typing speed.
+        # Uncomment line below and insert parameters for randomised typing speed.
         # get_random_pause()
         pyautogui.typewrite(char)
 
 
 def type_randomised_text():
-
+    # time delay after which script runs after starting the program
+    time.sleep(1)
     # Finds all words on current typing test, by going through the source of the page
     words = browser.find_elements_by_class_name('word')
 
@@ -45,7 +45,6 @@ def type_randomised_text():
 def type_single_word(i):
     word = browser.find_element_by_xpath(
         '// *[@id="words"]/div[{}]'.format(i+1))
-    print(word.text)
 
     for char in word.text:
         pyautogui.typewrite(char)
