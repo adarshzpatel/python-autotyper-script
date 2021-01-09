@@ -39,4 +39,7 @@ There are a few options the user can use to modify the execution of the script:
 * Given typing speed. To increase or decrease the time between each typed character, the `get_given_pause()` method can be called. The time between each character is the same when using this method. 
 * Sleep time before execution. When one of the typing methods is called, the program wil pause execution. This is done in order to allow the user to open the desired typing mode on MonkeyType.
 
+# Demonstrations
 
+Here is an example of the script in action during a custom typing test:  
+https://www.youtube.com/watch?v=FW1lzQ1OVnk

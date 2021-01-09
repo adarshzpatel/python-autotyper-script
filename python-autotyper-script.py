@@ -1,14 +1,11 @@
-import pyautogui
+import sys
 import time
 import random
-from datetime import datetime
+import pyautogui
 from selenium import webdriver
-import sys
 
+# Generates a random seed for randomizing typing speed and consistency
 seedValue = random.randrange(sys.maxsize)
-
-# Uses the current time as a seed for randomised typing speed
-# This method is outdated as of Python 3.9, so I have to find a different solution for seeding.
 random.seed(seedValue)
 
 # Opens MonkeyType in a Chromemium/Chrome window
