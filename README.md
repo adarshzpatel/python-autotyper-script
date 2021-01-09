@@ -23,7 +23,7 @@ Requirements:
 * On Ubuntu based distrubutions use `sudo apt-get install chromium-browser`  
 * On other operating systems, go to: https://www.chromium.org/getting-involved/download-chromium
   
-_Make sure to download a Chrome/Chromium version that is compatible with the Chromedriver, you can also replace the Chromedriver with a different version_
+_Make sure to download a Chrome/Chromium version that is compatible with the Chromedriver, you can also replace the Chromedriver in the folder with a different version_
 # How to use  
 Right now this script only supports the following typing modes on MonkeyType:
 
@@ -45,3 +45,4 @@ There are a few options the user can use to modify the execution of the script:
 
 
 * Custom typing test: https://www.youtube.com/watch?v=FW1lzQ1OVnk
+* 100 words with infinite speed: https://www.youtube.com/watch?v=fzWOdUH6yL0
