@@ -24,7 +24,8 @@ Requirements:
 * On Arch based distributions use `sudo pacman -S chromium`  
 * On Ubuntu based distrubutions use `sudo apt-get install chromium-browser`  
 * On other operating systems, go to: https://www.chromium.org/getting-involved/download-chromium
-
+  
+_Make sure to download a Chrome/Chromium version that is compatible with the Chromedriver, you can also replace the Chromedriver with a different version_
 # How to use  
 Right now this script only supports the following typing modes on MonkeyType:
 
