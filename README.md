@@ -33,7 +33,7 @@ Right now this script only supports the following typing modes on MonkeyType:
   
 * *Quote* - To let the script perform a typing test in the _quote_ mode, call the `type_text()` function at the bottom of the file method and start the script. A new Chrome/Chromium window will now open. Use the starting delay to switch to the Quote mode of your desired length.  
   
-*Timed tests, 15, 30, 60 and 120 seconds, are not supported*
+*Timed tests, 15, 30, 60 and 120 seconds, are not supported as this would allow users to cheat the leaderboard*
 
 There are a few options the user can use to modify the execution of the script:  
 
