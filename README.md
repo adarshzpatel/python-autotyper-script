@@ -2,8 +2,6 @@
 Python Script to simulate keyboard key presses using pyautogui.  
 This script is designed for use on the website monkeytype.com  
   
-*I do not encourage cheating, this script is just for fun*
-
 Requirements:
 
 * Python  
@@ -29,20 +27,21 @@ _Make sure to download a Chrome/Chromium version that is compatible with the Chr
 # How to use  
 Right now this script only supports the following typing modes on MonkeyType:
 
-*Custom* - To let the script perform a typing test in the _custom_ mode, call the `type_text()` and start the script. A new Chrome/Chromium window will now open. A new Chrome/Chromium window will now open. Use the starting delay to change the custom text and start the test.  
+* *Custom* - To let the script perform a typing test in the _custom_ mode, call the `type_text()` function at the bottom of the file and start the script. A new Chrome/Chromium window will now open. A new Chrome/Chromium window will now open. Use the starting delay to change the custom text and start the test.  
   
-*Words* - To let the script perform a typing test in the _words_ mode, call the `type_text()` and start the script. A new Chrome/Chromium window will now open. A new Chrome/Chromium window will now open. Use the starting delay to switch to the Words mode of your desired length.  
+* *Words* - To let the script perform a typing test in the _words_ mode, call the `type_text()` function at the bottom of the file and start the script. A new Chrome/Chromium window will now open. A new Chrome/Chromium window will now open. Use the starting delay to switch to the Words mode of your desired length.  
   
-*Quote* - To let the script perform a typing test in the _quote_ mode, call the `type_text()` method and start the script. A new Chrome/Chromium window will now open. Use the starting delay to switch to the Quote mode of your desired length.  
+* *Quote* - To let the script perform a typing test in the _quote_ mode, call the `type_text()` function at the bottom of the file method and start the script. A new Chrome/Chromium window will now open. Use the starting delay to switch to the Quote mode of your desired length.  
   
+*Timed tests, 15, 30, 60 and 120 seconds, are not supported*
 
 There are a few options the user can use to modify the execution of the script:  
 
-* Random typing speed. To randomize typing speed, the user can call the `get_random_pause()` function to randomize the pausing time between each character. This allows for a varying speed and consistency. 
-* Given typing speed. To increase or decrease the time between each typed character, the `get_given_pause()` function can be called. The time between each character is the same when using this function. 
-* Sleep time before execution. When one of the typing functions is called, the program wil pause execution. This is done in order to allow the user to open the desired typing mode on MonkeyType.
+* Random typing speed. To randomize typing speed, the user can call the `get_random_pause()` function can be called at the bottom of the file, before calling `type_text()`. This randomizes typing speed and allows for a varying consistency. 
+* Given typing speed. To increase or decrease the time between each typed character, the `get_given_pause()` function can be called at the bottom of the file, before calling `type_text()`. The time between each character is the same when using this function. 
+* Sleep time before execution. When the `type_text()` function is called, the program wil pause execution. This is done in order to allow the user to open the desired typing mode on MonkeyType.
 
 # Demonstrations
 
-Here is an example of the script in action during a custom typing test:  
-https://www.youtube.com/watch?v=FW1lzQ1OVnk
+
+* Custom typing test: https://www.youtube.com/watch?v=FW1lzQ1OVnk
