@@ -1,25 +1,21 @@
-import pyautogui
+import sys
 import time
 import random
-from datetime import datetime
+import pyautogui
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.action_chains import ActionChains
 from selenium import webdriver
-import sys
 
+# Generates a random seed for randomizing typing speed and consistency
 seedValue = random.randrange(sys.maxsize)
-
-# Uses the current time as a seed for randomised typing speed
-# This method is outdated as of Python 3.9, so I have to find a different solution for seeding.
 random.seed(seedValue)
 
 # Opens MonkeyType in a Chromemium/Chrome window
 browser = webdriver.Chrome(executable_path='chromedriver')
 browser.get('https://monkeytype.com/')
 
-# Enter the text to type inside the double quotes, this is used in the custom text mode on MonkeyType
-text = ""
 
-
-def type_random_text():
+def type_text():
     # Doesn't support timed mode yet (15, 30, 60, 120 seconds)
     # time delay after which script runs after starting the program.
     # This delay allows the user to switch to a typing test mode with a given number of words: 10, 25, 50, 100 words.
@@ -27,22 +23,22 @@ def type_random_text():
     words = browser.find_elements_by_class_name('word')
 
     for word in words:
-        for char in word.get_attribute('textContent'):
-            pyautogui.typewrite(char)
-        # Adds a space after every word typed
-        pyautogui.typewrite(' ')
+        # Using selenium send_keys() to type the word if it contains single or double quotation marks.
+        if "'" in word.get_attribute('textContent') or '"' in word.get_attribute('textContent'):
 
+            # Because 'word' isn't an input element, an ActionChain is used to be able to send keys
+            actions = ActionChains(browser)
+            actions.send_keys(word.get_attribute('textContent') + ' ')
+            actions.perform()
 
-def type_given_text(text_to_type):
-    # time delay after which script runs after starting the program
-    # This is used to allow the user some time to switch to the typing test running in the browser
-    time.sleep(10)
-    char_list = [i for i in text_to_type]
+        # If the word doesn't contain quotation marks, the word is typed character by character.
+        # This is done to be able to make use of the pause_time functions.
+        else:
+            for char in word.get_attribute('textContent'):
+                pyautogui.typewrite(char)
 
-    for char in char_list:
-        # Uncomment line below and insert parameters for randomised typing speed.
-        # get_random_pause()
-        pyautogui.typewrite(char)
+            # Adds a space after every word typed
+            pyautogui.typewrite(' ')
 
 
 def get_random_pause(lower_bound, upper_bound):
@@ -63,4 +59,4 @@ def get_given_pause(pause_time):
 
 
 get_given_pause(3)
-type_random_text()
+type_text()
