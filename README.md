@@ -25,21 +25,21 @@ Requirements:
   
 _Make sure to download a Chrome/Chromium version that is compatible with the Chromedriver, you can also replace the Chromedriver in the folder with a different version_
 # How to use  
-Right now this script only supports the following typing modes on MonkeyType:
+Right now this script supports the following typing modes on MonkeyType:
 
-* *Custom* - To let the script perform a typing test in the _custom_ mode, call the `type_text()` function at the bottom of the file and start the script. A new Chrome/Chromium window will now open. A new Chrome/Chromium window will now open. Use the starting delay to change the custom text and start the test.  
+* *Custom* - To let the script perform a typing test in the _custom_ mode, call the `given_word_count()` function at the bottom of the file and start the script. A new Chrome/Chromium window will now open. A new Chrome/Chromium window will now open. Use the starting delay to change the custom text and start the test.  
   
-* *Words* - To let the script perform a typing test in the _words_ mode, call the `type_text()` function at the bottom of the file and start the script. A new Chrome/Chromium window will now open. A new Chrome/Chromium window will now open. Use the starting delay to switch to the Words mode of your desired length.  
+* *Words* - To let the script perform a typing test in the _words_ mode, call the `given_word_count()` function at the bottom of the file and start the script. A new Chrome/Chromium window will now open. A new Chrome/Chromium window will now open. Use the starting delay to switch to the Words mode of your desired length.  
   
-* *Quote* - To let the script perform a typing test in the _quote_ mode, call the `type_text()` function at the bottom of the file method and start the script. A new Chrome/Chromium window will now open. Use the starting delay to switch to the Quote mode of your desired length.  
+* *Quote* - To let the script perform a typing test in the _quote_ mode, call the `given_word_count()` function at the bottom of the file and start the script. A new Chrome/Chromium window will now open. Use the starting delay to switch to the Quote mode of your desired length.  
   
-*Timed tests, 15, 30, 60 and 120 seconds, are not supported as this would allow users to cheat the leaderboard*
+* *Time* - To let the script perform a typing test in the _time_ mode, call the `given_duration()` function at the bottom of the file with the desired duration as the parameter and start the script. A new Chrome/Chromium window will now open. Use the starting delay to switch to the duration of your desired length.
 
 There are a few options the user can use to modify the execution of the script:  
 
-* Random typing speed. To randomize typing speed, the user can call the `get_random_pause()` function can be called at the bottom of the file, before calling `type_text()`. This randomizes typing speed and allows for a varying consistency. 
-* Given typing speed. To increase or decrease the time between each typed character, the `get_given_pause()` function can be called at the bottom of the file, before calling `type_text()`. The time between each character is the same when using this function. 
-* Sleep time before execution. When the `type_text()` function is called, the program wil pause execution. This is done in order to allow the user to open the desired typing mode on MonkeyType.
+* Random typing speed. To randomize typing speed, the user can call the `get_random_pause()` function can be called at the bottom of the file, before calling either one of the typing functions. This randomizes typing speed and allows for a varying consistency. 
+* Given typing speed. To increase or decrease the time between each typed character, the `get_given_pause()` function can be called at the bottom of the file, before calling either one of the typing functions. The time between each character is the same when using this function. 
+* Sleep time before execution. When the either one of the typing functions is called, the program wil pause execution. This is done in order to allow the user time to open the desired typing mode on MonkeyType.
 
 # Demonstrations
 
