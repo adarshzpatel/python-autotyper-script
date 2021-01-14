@@ -62,15 +62,6 @@ def given_duration(test_time):
         type_text(words)
 
 
-def get_random_pause(lower_bound, upper_bound):
-    if lower_bound > upper_bound:
-        print('Lower bound cannot be greater than upper bound')
-        return
-    # Sets the pause between each character to a random float between two bounds of N/100 seconds
-    # This makes the typing consistency more believable.
-    pyautogui.PAUSE = float(random.randint(lower_bound, upper_bound) / 100)
-
-
 def get_given_pause(pause_time):
     if pause_time < 0:
         print('Pause time cannot be less than 0')
@@ -81,5 +72,5 @@ def get_given_pause(pause_time):
 
 # This is an example of how to call the typing functions
 # Call `given_word_count()` to perform a words, custom or quote test
-get_given_pause(2)
+get_given_pause(5)
 given_duration(120)

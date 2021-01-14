@@ -37,7 +37,6 @@ Right now this script supports the following typing modes on MonkeyType:
 
 There are a few options the user can use to modify the execution of the script:  
 
-* Random typing speed. To randomize typing speed, the user can call the `get_random_pause()` function can be called at the bottom of the file, before calling either one of the typing functions. This randomizes typing speed and allows for a varying consistency. 
 * Given typing speed. To increase or decrease the time between each typed character, the `get_given_pause()` function can be called at the bottom of the file, before calling either one of the typing functions. The time between each character is the same when using this function. 
 * Sleep time before execution. When the either one of the typing functions is called, the program wil pause execution. This is done in order to allow the user time to open the desired typing mode on MonkeyType.
 
