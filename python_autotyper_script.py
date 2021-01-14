@@ -37,7 +37,6 @@ def type_text(words):
 
 
 def given_word_count():
-    # Doesn't support timed mode yet (15, 30, 60, 120 seconds)
     # time delay after which script runs after starting the program.
     # This delay allows the user to switch to a typing test mode with a given number of words: 10, 25, 50, 100 words.
     time.sleep(3)
@@ -80,5 +79,7 @@ def get_given_pause(pause_time):
     pyautogui.PAUSE = float(pause_time / 100)
 
 
+# This is an example of how to call the typing functions
+# Call `given_word_count()` to perform a words, custom or quote test
 get_given_pause(2)
 given_duration(120)
