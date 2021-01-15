@@ -1,28 +1,28 @@
 import time
 import pyautogui
-from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium import webdriver
 from datetime import datetime, timedelta
 
 
 # Opens MonkeyType in a Chromemium/Chrome window
+# This can be modified to use different browsers/drivers
 browser = webdriver.Chrome(executable_path='chromedriver')
 browser.get('https://monkeytype.com/')
 
 
 def type_text(words):
     for word in words:
-        # Using selenium send_keys() to type the word if it contains single or double quotation marks.
+        # Using selenium send_keys() to type the word if it contains single or double quotation marks
         if "'" in word.get_attribute('textContent') or '"' in word.get_attribute('textContent'):
 
-            # Because 'word' isn't an input element, an ActionChain is used to be able to send keys
+            # Because 'word' isn't an HTML input element, an ActionChain is used to be able to send keys
             actions = ActionChains(browser)
             actions.send_keys(word.get_attribute('textContent') + ' ')
             actions.perform()
 
-        # If the word doesn't contain quotation marks, the word is typed character by character.
-        # This is done to be able to make use of the pause_time functions.
+        # If the word doesn't contain quotation marks, the word is typed character by character
+        # This is done to be able to make use of pyautogui.PAUSE
         else:
             for char in word.get_attribute('textContent'):
                 pyautogui.typewrite(char)
@@ -32,9 +32,8 @@ def type_text(words):
 
 
 def given_word_count():
-    # time delay after which script runs after starting the program.
-    # This delay allows the user to switch to a typing test mode with a given number of words: 10, 25, 50, 100 words.
-    time.sleep(3)
+    # time.sleep() allows the user some time to select the desired test mode on monkeytype.com
+    time.sleep(6)
     words = browser.find_elements_by_class_name('word')
 
     type_text(words)
@@ -65,5 +64,5 @@ def get_given_pause(pause_time):
 
 # This is an example of how to call the typing functions
 # Call `given_word_count()` to perform a words, custom or quote test
-get_given_pause(3)
-given_duration(30)
+get_given_pause(2)
+given_word_count()
