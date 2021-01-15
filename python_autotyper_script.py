@@ -1,15 +1,10 @@
-import sys
 import time
-import random
 import pyautogui
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium import webdriver
 from datetime import datetime, timedelta
 
-# Generates a random seed for randomizing typing speed and consistency
-seedValue = random.randrange(sys.maxsize)
-random.seed(seedValue)
 
 # Opens MonkeyType in a Chromemium/Chrome window
 browser = webdriver.Chrome(executable_path='chromedriver')
@@ -49,16 +44,14 @@ def given_duration(test_time):
     # Performs a typing test with a given duration
     # Call this function with either 15, 30, 60 or 120 seconds as value for the test_time parameter
     # time.sleep() allows the user some time to select the desired test mode on monkeytype.com
-    time.sleep(5)
+    time.sleep(7)
 
     # Performs the function while the current time is less than the current time + the duration of the test
     end_time = datetime.now() + timedelta(seconds=test_time)
     while datetime.now() < end_time:
         # Stores the active word to type in a list in order to be used as a parameter for type_text()
-        words = []
+        words = [browser.find_element_by_css_selector('div.word.active')]
 
-        # Finds the current word to be typed in the typing test and sends the keypresses to monkeytype.com
-        words.append(browser.find_element_by_css_selector('div.word.active'))
         type_text(words)
 
 
@@ -72,5 +65,5 @@ def get_given_pause(pause_time):
 
 # This is an example of how to call the typing functions
 # Call `given_word_count()` to perform a words, custom or quote test
-get_given_pause(5)
-given_duration(120)
+get_given_pause(3)
+given_duration(30)
